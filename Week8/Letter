@@ -1,0 +1,15 @@
+namespace Generics;
+
+public class Letter : DeliveryItem
+{
+    public Letter(string trackingNumber, double weight) : base(trackingNumber, weight)
+    {
+    }
+
+    public override double CalculateCost()
+    {
+        int fixed_price = 15;
+        return fixed_price + (Weight * 10);
+    }
+}
+    
