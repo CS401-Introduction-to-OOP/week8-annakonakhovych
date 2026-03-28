@@ -24,8 +24,6 @@ class Program
         Console.WriteLine($"Total sum of all your sendings is {myCargo.GetTotalCost()} uah");
 
         
-        
-
-
+    
     }
 }
