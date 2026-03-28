@@ -1,6 +1,23 @@
 ﻿namespace Generics;
 
-public class Parcel
+public class Parcel : DeliveryItem
 {
+    public string Dimensions { get;  }
+
+    public Parcel(string trackingNumber, double weight, string dimensions) : base(trackingNumber, weight)
+    {
+        Dimensions = dimensions;
+    }
     
+    public override double CalculateCost()
+    {
+        int fixed_price = 50;
+        return fixed_price + (Weight * 25);
+    }
+
+    public override void PrintInfo()
+    {
+        base.PrintInfo();
+        Console.WriteLine($"Your parcel: {Dimensions}");
+    }
 }

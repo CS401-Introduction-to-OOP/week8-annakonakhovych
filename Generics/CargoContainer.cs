@@ -1,6 +1,24 @@
 ﻿namespace Generics;
 
-public class CargoContainer
+public class CargoContainer<T> where T : DeliveryItem
 {
+    private List <T > _items = new List <T >();
+
+    public void AddItem(T item)
+    {
+        _items.Add(item);
+        
+    }
+
+    public double GetTotalCost()
+    {
+        double sum = 0;
+        foreach (var item in _items)
+        {
+            sum += item.CalculateCost();
+        }
+
+        return sum;
+    }
     
 }
